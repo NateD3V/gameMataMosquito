@@ -8,10 +8,24 @@ const state = {
         posicaoY: Math.random() 
     },
     vidas:1,
-    fx: new Audio('audio/splat.wav'),
-    time:15
-    
 
+    fx: new Audio('audio/splat.wav'),
+
+    time:15,
+
+    nivel: window.location.search,
+
+    mosquitoTime: 1500
+
+}
+
+// Lógica da seleção de nível
+if(state.nivel === '?normal'){
+    state.mosquitoTime = 1500
+} else if(state.nivel === '?dificil') {
+    state.mosquitoTime = 1000
+} else if (state.nivel === '?chucknorris') {
+    state.mosquitoTime = 200
 }
 
 function ajustarPalcoJogo(){
@@ -50,7 +64,6 @@ function posicaoRandomica(){
         
     }
     
-
     // Calcula a posição máxima permitida para o mosquito respeitando as dimensões do palco
     const maxPosicaoX = state.palco.largura - 90;
     const maxPosicaoY = state.palco.altura - 90;
@@ -103,7 +116,7 @@ function ladoAleatorio(){
 // Main
 let criarMosquitos = setInterval(() =>{
     posicaoRandomica();
-}, 2000);
+}, state.mosquitoTime);
 
 
 // console.log(state.posicao.posicaoY,state.posicao.posicaoX);

@@ -1,7 +1,13 @@
+html {
+    cursor: url(/img/mata_mosca.png) 30 30, auto;
+    
+}
+
 body {
     background-image: url('/img/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 
@@ -57,4 +63,17 @@ body {
 /* Button */
 .reload {
     margin-bottom:50px
+}
+
+/* span do Game Over */
+
+.quote {
+    text-align: center;
+    font-size: 1.3rem;
+    
+}
+span {
+    font-weight: bold;
+    font-size: 2rem;
+    
 }

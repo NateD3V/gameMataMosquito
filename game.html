@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/mata_mosca.png" type="image/x-icon">
+    <title>Mata Mosquito</title>
+</head>
+<body onresize="ajustarPalcoJogo()">
+    <div class="painel">
+        <div class="vidas">
+            <img id="v1" draggable="false" src="img/coracao_cheio.png" alt="corações">
+            <img id="v2" draggable="false" src="img/coracao_cheio.png" alt="corações">
+            <img id="v3" draggable="false" src="img/coracao_cheio.png" alt="corações">
+        </div>
+        <div class="cronometro">
+            Tempo Restante: <span id="cronometro"></span>
+        </div>
+    </div>
+
+
+    
+    <script src="js/engine.js" defer>
+        document.getElementById('cronometro').innerHTML = state.time
+    </script>
+</body>
+</html>
